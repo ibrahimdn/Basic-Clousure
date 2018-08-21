@@ -46,9 +46,28 @@ func setName(number: Int) -> Int {
 func sum2 (from: Int, to: Int, clousure: (Int) -> Int) -> Int {
     var sum = 0
     for i in  from...to {
+        // gelen her deger için clousure fonksiyonunu çağırıyor
         sum += clousure(i)
     }
     return sum
 }
 
 sum2(from: 0, to: 10, clousure: setName)
+
+
+/* EXAMPLE 3 */
+
+var nameArray = ["ibrahim", "muhammed", "kemal","büşra"]
+var name: (Int) -> String = {
+    return nameArray[$0]
+    
+}
+
+func counterName(from: Int, to: Int, clousure:(Int) -> String) {
+    for i in from...to {
+        print(clousure(i) )
+    }
+   
+}
+
+counterName(from: 0, to: 3, clousure: name)
